@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google-Like Search</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            background-color: #ffffff;
+            color: #202124;
+        }
+        #logo {
+            margin-top: 150px;
+            margin-bottom: 30px;
+        }
+        #search-box {
+            width: 60%;
+            padding: 12px;
+            font-size: 18px;
+            border: 1px solid #dfe1e5;
+            border-radius: 24px;
+            outline: none;
+            box-shadow: none;
+        }
+        #search-box:focus {
+            border-color: #4285f4;
+        }
+        #search-button {
+            padding: 10px 20px;
+            margin-top: 20px;
+            font-size: 16px;
+            color: white;
+            background-color: #4285f4;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            outline: none;
+        }
+        #search-button:hover {
+            background-color: #357ae8;
+        }
+        #shortcut-buttons {
+            margin-top: 40px;
+        }
+        .shortcut-button {
+            padding: 10px 20px;
+            margin: 5px;
+            font-size: 16px;
+            color: white;
+            background-color: #4285f4;
+            border: none;
+            border-radius: 4px;
+            text-decoration: none;
+            display: inline-block;
+            cursor: pointer;
+        }
+        .shortcut-button:hover {
+            background-color: #357ae8;
+        }
+    </style>
+</head>
+<body>
+    <img id="logo" src="https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png" alt="Google Logo">
+
+    <form id="search-form">
+        <input type="text" id="search-box" placeholder="Search Google or type a URL">
+        <br>
+        <button id="search-button" type="submit">Google Search</button>
+    </form>
+
+    <div id="shortcut-buttons">
+        <a href="https://www.youtube.com" class="shortcut-button" target="_blank">YouTube</a>
+        <a href="https://mail.google.com" class="shortcut-button" target="_blank">Gmail</a>
+        <a href="https://maps.google.com" class="shortcut-button" target="_blank">Maps</a>
+        <a href="https://news.google.com" class="shortcut-button" target="_blank">News</a>
+    </div>
+
+    <script>
+        document.getElementById("search-form").addEventListener("submit", function(event) {
+            event.preventDefault();
+            var query = document.getElementById("search-box").value;
+            if (query) {
+                window.location.href = "https://www.google.com/search?q=" + encodeURIComponent(query);
+            }
+        });
+    </script>
+</body>
+</html>
